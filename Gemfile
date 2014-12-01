@@ -23,7 +23,7 @@ gem "sass-rails", "~> 4.0.3"
 gem "title"
 gem "uglifier"
 gem "unicorn"
-
+gem 'faker'
 group :development do
   gem "bundler-audit"
   gem "spring"
