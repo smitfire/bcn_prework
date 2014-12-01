@@ -19,7 +19,7 @@ gem "rack-timeout"
 gem "rails", "4.1.8"
 gem "recipient_interceptor"
 gem "sass-rails", "~> 4.0.3"
-gem "simple_form"
+# gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
@@ -50,4 +50,5 @@ group :test do
 end
 
 group :staging, :production do
+  gem 'rails_12factor'
 end
