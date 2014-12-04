@@ -1,0 +1,6 @@
+<h1>USER SHOW PAGE</h1>
+<% @user.exercises.each do |ex| %>
+  <li>
+    <%= link_to ex.title, exercise_path(ex.id) %> <span><%= @user.answers.find_by(exercise_id: ex.id).convert_status %> </span>
+  </li>
+<% end -%>

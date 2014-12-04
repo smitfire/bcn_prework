@@ -10,7 +10,26 @@
 </head>
 <body class="<%= body_class %>">
   <%= render "flashes" -%>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to "Go Back", :back %>
+          <%= link_to "Home", root_path, class:"navbar-brand"  %>
+        </div>
+        <div class="navbar-collapse">
+          <% if !current_user %>
+              <%= render "users/sign_in" %>
+              <% else %>
+              <div class="navbar-right navbar-form">
+                <%= link_to 'Profile Page', user_path(current_user.id), class: 'btn btn-default' %>
+                 <%= link_to "Log out", session_path(current_user.id), method: :delete, class: 'btn btn-danger' %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <hr>
   <%= yield %>
-  <%= render "javascript" %>
+  <%= render "javascript" -%>
 </body>
 </html>

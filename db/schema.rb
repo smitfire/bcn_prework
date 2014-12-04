@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201164347) do
+ActiveRecord::Schema.define(version: 20141201213015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "exercise_id"
+    t.string   "answer"
+    t.json     "specson"
+    t.json     "spectml"
+    t.boolean  "status",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -35,21 +46,10 @@ ActiveRecord::Schema.define(version: 20141201164347) do
   create_table "exercises", force: true do |t|
     t.string   "title"
     t.string   "description"
+    t.string   "spec_test_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "useranswers", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "exercise_id"
-    t.boolean  "status"
-    t.string   "answer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "useranswers", ["exercise_id"], name: "index_useranswers_on_exercise_id", using: :btree
-  add_index "useranswers", ["user_id"], name: "index_useranswers_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

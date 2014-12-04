@@ -6,6 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
-# User.delete_all
-# User.create(name: 'nick', email: 'n@n.com', password: 'n', password_confirmation: 'n')
-# Exercise.create(title: 'FizzBuzz', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz', answer: )
+
+u = User.create(name: 'nick', email: 'n@n.com', password: 'n', password_confirmation: 'n')
+
+Exercise.create(title: 'Fizz Buzz', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
+Exercise.create(title: 'Array Sum', description: 'Define a method by the name of total and let total take one argument, which would be an array. Calculate the sum of this array')
+Exercise.create(title: 'Credit Card Validator', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
+Exercise.create(title: 'Simple Guessing Game', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
+Exercise.create(title: 'Array Mean', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
+Exercise.create(title: 'Array Median', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
+Exercise.create(title: 'Longest String In Array', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
+Exercise.create(title: 'Calculate Letter Grade', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
+
+Exercise.all.each do |ex|
+  u.exercises << ex
+end

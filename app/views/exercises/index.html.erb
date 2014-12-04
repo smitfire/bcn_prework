@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Exercise INDEX</h1>
+  <ul>
+    <% @exercises.each do |ex| %>
+      <li>
+          <%= link_to ex.title, exercise_path(ex.id) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

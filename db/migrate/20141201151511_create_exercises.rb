@@ -3,7 +3,7 @@ class CreateExercises < ActiveRecord::Migration
     create_table :exercises do |t|
       t.string :title
       t.string :description
-
+      t.string :spec_test_path
       t.timestamps
     end
   end

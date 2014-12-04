@@ -1,13 +1,18 @@
 source "https://rubygems.org"
-
+# source "http://production.cf.rubygems.org"
 ruby "2.1.5"
-
+# Use ActiveModel has_secure_password
+gem "bcrypt", "~> 3.1.7"
+gem "annotate", "~> 2.6.5"
+gem "autoprefixer-rails"
 gem "airbrake"
+gem "bootstrap-sass"
+gem "sass-rails", "~> 4.0.3"
 gem "bourbon", "~> 3.2.1"
-gem "coffee-rails"
 gem "delayed_job_active_record"
 gem "email_validator"
 gem "flutie"
+gem "json"
 gem "high_voltage"
 gem "i18n-tasks"
 gem "jquery-rails"
@@ -18,20 +23,20 @@ gem "pg"
 gem "rack-timeout"
 gem "rails", "4.1.8"
 gem "recipient_interceptor"
-gem "sass-rails", "~> 4.0.3"
-# gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
-gem 'faker'
+gem "faker"
 group :development do
   gem "bundler-audit"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "quiet_assets"
 end
 
 group :development, :test do
-  gem "awesome_print"
+  gem "rails-footnotes", "~> 4.0"
+  # gem "awesome_print"
   gem "byebug"
   gem "dotenv-rails"
   gem "factory_girl_rails"
@@ -50,5 +55,5 @@ group :test do
 end
 
 group :staging, :production do
-  gem 'rails_12factor'
+  gem "rails_12factor"
 end

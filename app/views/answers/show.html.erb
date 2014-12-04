@@ -1,0 +1,6 @@
+<h1>Answer Show page</h1>
+<%= simple_format h(@answer.answer) %>
+<hr>
+<h5><%= @answer.convert_status %></h5>
+<hr>
+<%= link_to "Rspec Results", show_spec_path(@answer.id) %>

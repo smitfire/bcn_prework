@@ -1,0 +1,9 @@
+<h1>
+  Answers INDEX
+</h1>
+<ul>
+  <% @answers.each do |answer| %>
+    <li><%= answer.answer %></li>
+    <li><%= answer.status %></li>
+  <% end -%>
+</ul>
