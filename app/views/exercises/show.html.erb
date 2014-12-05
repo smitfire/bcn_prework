@@ -1,10 +1,10 @@
-<h1>Exercise SHOW</h1>
 <h4>
   <%= @exercise.title %>
 </h4>
 <p>
   <%= @exercise.description %>
 </p>
+<h5>Status: <%= @answer.convert_status %></h5>
 <div class="container">
   <%= form_for @answer, class: 'form-horizontal center', url: answer_path(@answer.id) do |f| %>
    <%= f.hidden_field :user_id, :value => current_user.id%>
@@ -26,6 +26,5 @@
     </div>
   <%end %>
 </div>
-<div class="container">
-  
-</div>
+<hr>
+<%= link_to "Rspec Results", show_spec_path(@answer.id) %>

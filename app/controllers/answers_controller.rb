@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   before_action :fetch_answer, only: [:show, :update, :show_spec]
-  before_action :update_answer, only: :update
+  before_action :confirm_change, only: :update
   before_action :fetch_exercises, :authorize, only: :index
 
   def index
@@ -35,7 +35,8 @@ class AnswersController < ApplicationController
       @answer = Answer.find(params[:id])
     end
 
-    def update_answer
-      @answer.update(answer_params)
+    def confirm_change
+      @answer.answer == answer_params[:answer] ? (flash[:alert] = 'The answer is the same') : (@answer.update(answer_params))
     end
+
 end
