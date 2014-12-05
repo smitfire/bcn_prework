@@ -1,0 +1,30 @@
+<div class="container">
+  <h4><%= @specson_show[:summary_line] %></h4>
+  <hr>
+  <ul>
+    <% @specson_show[:examples].each do |example| %>
+      <li><%= example[:description].capitalize %> <%= example[:status] %></li>
+    <% end -%>
+  </ul>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Description</th>
+        <th>Header</th>
+        <th>Header</th>
+        <th>Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @specson_show[:examples].each do |example| %>
+      <tr>
+        <td><%= example[:status].capitalize %></td>
+        <td><%= example[:full_description].capitalize %></td>
+      </tr>
+      <% end -%>
+    </tbody>
+  </table>
+</div>

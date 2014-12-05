@@ -8,6 +8,7 @@ class AnswersController < ApplicationController
   end
 
   def show
+    @specson_show = HashWithIndifferentAccess.new(@answer.specson).with_indifferent_access
   end
 
   def show_spec

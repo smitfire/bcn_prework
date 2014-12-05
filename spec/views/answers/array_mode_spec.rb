@@ -1,5 +1,4 @@
 require "./spec/spec_helper"
-require "./spec/views/answers/array_mode.rb"
 require 'rails_helper'
 
 RSpec.describe Answer, :type => :model do
@@ -9,23 +8,23 @@ RSpec.describe Answer, :type => :model do
     let(:array_3) { ["apple", "banana", "clementine", "banana", "cherry", "strawberry", "cherry"]}
 
     it "is defined" do
-      defined?(mode).should eq 'method'
+      expect(defined?(mode)).to eq('method')
     end
 
     it "requires a single argument" do
-      method(:mode).arity.should eq 1
+      expect(method(:mode).arity).to eq(1)
     end
 
     it "returns the correct mode when mode is a unique integer" do
-      mode(array_1).should eq [5]
+      expect(mode(array_1)).to eq([5])
     end
 
     it "returns the correct mode when mode is not a unique integer" do
-      mode(array_2).should eq [5,6]
+      expect(mode(array_2)).to eq([5,6])
     end
 
     it "returns the correct mode for strings" do
-      mode(array_3).should eq ["banana", "cherry"]
+      expect(mode(array_3)).to eq(["banana", "cherry"])
     end
   end
 end

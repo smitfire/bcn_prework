@@ -15,6 +15,7 @@ Exercise.create(title: 'Credit Card Validator', description: 'replace the multip
 Exercise.create(title: 'Simple Guessing Game', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
 Exercise.create(title: 'Array Mean', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
 Exercise.create(title: 'Array Median', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
+Exercise.create(title: 'Array Mode', description: 'define a method called mode that takes one argument, an array. It should return the most frequent occurring value in the array for both numbers and strings. If there are multiple values that occur of equal frequency it should return an array of both.')
 Exercise.create(title: 'Longest String In Array', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
 Exercise.create(title: 'Calculate Letter Grade', description: 'replace the multiple of 3 with the string fizz and multiples of 5 with the string buzz and the multiple of both with fizzbuzz')
 

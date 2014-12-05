@@ -1,5 +1,9 @@
 <%= link_to "Go Back", :back %>
 <hr>
 <div class="container">
-  <%= render html: @answer.spectml.html_safe %>
+  <% if @answer.status %>
+    <%= render html: @answer.spectml.html_safe %>
+  <% else %>
+    <%= render partial: "answers/_spectml/#{@answer.set_file_path}" %>
+  <% end -%>
 </div>

@@ -1,5 +1,4 @@
 require "./spec/spec_helper"
-require "./spec/views/answers/calculate_letter_grade.rb"
 require 'rails_helper'
 
 RSpec.describe Answer, :type => :model do
@@ -11,22 +10,22 @@ RSpec.describe Answer, :type => :model do
     let(:arrayF) { [50,40,0,99,9]}
 
     it 'is defined as a method' do
-      defined?(get_grade).should eq 'method'
+      expect(defined?(get_grade)).to eq('method')
     end
     it 'returns "A" when the average is >= 90' do
-      get_grade(arrayA).should eq "A"
+      expect(get_grade(arrayA)).to eq("A")
     end
-    it 'returns "B" when the average is >= 80' do 
-      get_grade(arrayB).should eq "B"
+    it 'returns "B" when the average is >= 80' do
+      expect(get_grade(arrayB)).to eq("B")
     end
     it 'returns "C" when the average is >= 70' do
-      get_grade(arrayC).should eq "C"
+      expect(get_grade(arrayC)).to eq("C")
     end
     it 'returns "D" when the average is >= 60' do
-      get_grade(arrayD).should eq "D"
+      expect(get_grade(arrayD)).to eq("D")
     end
     it 'returns "F" when the average is < 60' do
-      get_grade(arrayF).should eq "F"
+      expect(get_grade(arrayF)).to eq("F")
     end
 
   end

@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20141201213015) do
   create_table "answers", force: true do |t|
     t.integer  "user_id"
     t.integer  "exercise_id"
-    t.string   "answer"
+    t.text     "answer"
     t.json     "specson"
-    t.json     "spectml"
+    t.text     "spectml"
     t.boolean  "status",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"

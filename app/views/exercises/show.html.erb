@@ -1,16 +1,18 @@
 <h4>
   <%= @exercise.title %>
 </h4>
+  <h4><%= @exercise.spec_test_path %></h4>
 <p>
   <%= @exercise.description %>
 </p>
 <h5>Status: <%= @answer.convert_status %></h5>
+<hr>
+<p><%= simple_format h(@answer.answer) %></p>
 <div class="container">
   <%= form_for @answer, class: 'form-horizontal center', url: answer_path(@answer.id) do |f| %>
    <%= f.hidden_field :user_id, :value => current_user.id%>
    <%= f.hidden_field :exercise_id, :value => @exercise.id%>
    <div class="clearfix"></div>
-   <hr> 
     <div class="form-group">
       <%= f.label :answer, class: 'col-sm-2 control-label' %>
       <div class="col-sm-10">
